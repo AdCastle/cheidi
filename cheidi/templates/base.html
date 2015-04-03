@@ -1,9 +1,13 @@
-{% load cms_tags menu_tags sekizai_tags %}
+{% load cms_tags staticfiles sekizai_tags menu_tags %}
 <!DOCTYPE html>
 <html>
 <head>
     <title>{% block title %}This is my new project home page{% endblock title %}</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     {% render_block "css" %}
+	<link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.0.3/css/bootstrap.min.css">
+    <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.0.3/css/bootstrap-theme.min.css">
+
     {% load staticfiles %}
     <link rel="stylesheet" type="text/css" href="{% static 'style.css' %}" />
 </head>
@@ -23,6 +27,9 @@
     {% block content %}
     {% endblock content %}
 </div>
+<script src="http://code.jquery.com/jquery.js"></script>
+<script src="//netdna.bootstrapcdn.com/bootstrap/3.0.3/js/bootstrap.min.js"></script>
+   
 {% render_block "js" %}
 </body>
 </html>
