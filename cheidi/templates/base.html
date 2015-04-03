@@ -4,23 +4,22 @@
 <head>
     <title>{% block title %}This is my new project home page{% endblock title %}</title>
     {% render_block "css" %}
-    <style type="text/css">
-        .nav {
-            padding-left: 0;
-        }
-        .nav li {
-            display: inline;
-            list-style-type: none;
-            padding-right: 20px;
-        }
-    </style>
+    {% load staticfiles %}
+    <link rel="stylesheet" type="text/css" href="{% static 'style.css' %}" />
 </head>
 <body>
 {% cms_toolbar %}
-<div style="width: 940px; margin:0 auto">
-    <ul class="nav">
-        {% show_menu 0 100 100 100 %}
-    </ul>
+    <div class="container">
+      <div class="navbar navbar-default" role="navigation">
+        <div class="navbar-header">
+          <a class="navbar-brand" href="#">Charlie and Heidis Wedding</a>
+        </div>
+        <div class="navbar-collapse collapse">
+          <ul class="nav navbar-nav">
+            {% show_menu 0 1 100 100 "menu.html" %}
+          </ul>
+        </div>
+      </div>
     {% block content %}
     {% endblock content %}
 </div>
